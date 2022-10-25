@@ -5,18 +5,17 @@ import math
 
 data_file = open("../yelp_academic_dataset_review.json")
 data = []
-count = 0
+
 for line in data_file:
-    count += 1
     data.append(json.loads(line)['text'])
-    if count == 100000:
+    if len(data) == 100000:
         break
 
 data_file.close()
 
 
 print(len(data))
-print(data[12])
+print(data[1234])
 
 def clean_non_english(txt):
     txt = re.sub(r'\W+', ' ', txt)
@@ -57,4 +56,4 @@ for line in data:
     for key in temp_dict:
         temp_dict[key] = temp_dict[key] * idf[key]
     tf_idf.append(temp_dict)
-print((tf_idf[12]))
+print((tf_idf[1234]))
