@@ -7,7 +7,7 @@ data = []
 
 for line in data_file:
     data.append(json.loads(line)['text'])
-    if len(data) == 10:
+    if len(data) == 1000:
         break
 
 data_file.close()
