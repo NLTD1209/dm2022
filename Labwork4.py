@@ -41,9 +41,7 @@ for i in range(len(items)):
     mode_list.append(old_mode)
 
 
-for mode in mode_list:
-    if mode not in clusters:
-        clusters += [mode]
+clusters = set(mode_list)
 print(mode_list)
 print(clusters)
 
